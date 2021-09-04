@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+// font-family: 'Roboto', sans-serif;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    
+}
+@import "~ng-zorro-antd/ng-zorro-antd.css";
+
+.w-100{
+    width: 100%;
+}
+
+.logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+  }

@@ -1,0 +1,70 @@
+<nz-layout class="app-layout">
+  <!-- <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+        <h1>Alekha </h1>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome">View</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Create</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Workplace</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Basic Form</a>
+          </li>
+        </ul>
+      </li>
+
+      <li nzIcon="form">
+        About
+      </li>
+    </ul>
+  </nz-sider> -->
+  <nz-layout>
+    <!-- <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+      </div>
+    </nz-header> -->
+    <nz-header>
+       <!-- <div class="logo"> <h1>Alekha</h1> </div>  -->
+       <div style="font-family: 'Roboto', sans-serif;width: 50px;width: 50px;height: 50px;color: wheat;float: left;margin-left: 10px;font-size: 36px;"><b>Alekha</b></div>
+       <div *ngIf="common.loginFlag == true" style="width: 300px;float: right;">  <nz-avatar [nzShape]="'round'" [nzSize]="32" [nzIcon]="'user'"></nz-avatar>  <span style="color: wheat; padding-left: 3px;padding-right: 3px;">{{common.loginEmail}}</span> <button style="margin-left: 5px;margin-right: 5px;" nz-button nzType="default" (click)="logout()" nzDanger> LogOut </button></div>
+
+       <ul *ngIf="common.loginFlag == true" style="margin-left: 150px;" nz-menu nzTheme="dark" nzMode="horizontal">
+        <li nz-menu-item > <a routerLink="home/create">Create</a></li>
+        <li nz-menu-item><a routerLink="home/view">View</a></li>
+        <li nz-menu-item><a routerLink="home/about">About</a></li>
+      </ul>
+
+    </nz-header>
+    
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+
+    <nz-footer>Made with <3 by Devesh </nz-footer>
+  </nz-layout>
+</nz-layout>

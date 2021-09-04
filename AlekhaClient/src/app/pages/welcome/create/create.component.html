@@ -1,0 +1,131 @@
+<h3> Lets create awesome charts with your data !</h3>
+
+<nz-steps [nzCurrent]="current">
+    <nz-step nzTitle="Input Data"></nz-step>
+    <nz-step nzTitle="Format Data"></nz-step>
+    <nz-step nzTitle="Configure"></nz-step>
+    <nz-step nzTitle="Create"></nz-step>
+  </nz-steps>
+
+  <div class="steps-content">
+    <div *ngIf="current == 0">
+        <div style="width: 500px;text-align: left;margin:auto">
+
+        Upload your file 
+          <!-- <div class="clearfix">
+            <nz-upload
+              class="upload-list-inline"
+              nzAction=""
+              nzListType="picture"
+              [(nzFileList)]="fileList2"
+              (nzChange) = "onFileUpload($event)">
+              <button nz-button>
+                <span>
+                  <i nz-icon nzType="upload"></i>
+                  Upload
+                </span>
+              </button>
+            </nz-upload>
+          </div> -->
+
+          <input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
+<button nz-button type="button" class="btn btn-info" (click)="Upload()" >Upload</button>
+            <h3 style="margin:15px auto;"> OR </h3>
+            <textarea style="width: 70%;"
+            [(ngModel)]="chartDataText"
+            nz-input
+            placeholder="Enter your data in CSV,TSV or JSON format"
+            [nzAutosize]="{ minRows: 2, maxRows: 6 }"
+          ></textarea>
+    </div> 
+    </div>
+
+    <div *ngIf="current == 1">
+        <div style="width: 500px;text-align: left;margin:auto">
+        <h3> Select Chart Type </h3>
+
+        <nz-radio-group [(ngModel)]="chartType" nzSize="large">
+            <label nz-radio-button nzValue="line"> <i nz-icon nzType="line-chart" nzTheme="outline"></i> Line</label>
+            <label nz-radio-button nzValue="bar"><i nz-icon nzType="bar-chart" nzTheme="outline"></i> Bar</label>
+            <label nz-radio-button nzValue="pie"> <i nz-icon nzType="pie-chart" nzTheme="outline"></i> Pie</label>
+            <label nz-radio-button nzValue="treemap"> <i nz-icon nzType="project" nzTheme="outline"></i> Treemap</label>
+          </nz-radio-group>
+
+          <h3 style="margin:30px 15px 0px 0px;"> Select Dimensions & Measures for the selected chart </h3>
+          <h4>Select Measures</h4>
+          <nz-select  style="width: 200px;" [(ngModel)]="selectedMeasures"  nzMode="multiple" nzPlaceHolder="Please select measures">
+            <nz-option *ngFor="let measure of measures" [nzLabel]="measure.label" [nzValue]="measure.value"></nz-option>
+          </nz-select>
+
+          <h4 style="margin-top:15px;"> Select Dimensions</h4>
+          <nz-select style="width: 200px;" [(ngModel)]="selectedDimensions" nzMode="multiple" nzPlaceHolder="Please select dimensions">
+            <nz-option *ngFor="let dimension of dimensions" [nzLabel]="dimension.label" [nzValue]="dimension.value"></nz-option>
+          </nz-select>
+
+
+
+
+
+        </div>
+        </div> 
+
+        <div *ngIf="current == 2">
+            <div style="width: 500px;text-align: left;margin:auto">
+
+            <h3 style="margin:30px 15px 0px 0px;"> Enter title for your chart</h3>
+            
+            <input nz-input placeholder="Title" [(ngModel)]="title" />
+
+            <h3 style="margin:30px 15px 0px 0px;"> Select Color theme </h3>
+    
+            <!-- <nz-radio-group [(ngModel)]="radioValue" nzSize="large">
+                <label nz-radio-button nzValue="A"><div style="width: 25px;height: 25px;background-color: aqua;"></div><div style="width: 25px;height: 25px;background-color: red;"></div></label>
+                <label nz-radio-button nzValue="B"><div style="width: 25px;height: 25px;background-color: aqua;"></div><div style="width: 25px;height: 25px;background-color: red;"></div></label>
+                <label nz-radio-button nzValue="C"><div style="width: 25px;height: 25px;background-color: aqua;"></div><div style="width: 25px;height: 25px;background-color: red;"></div></label>
+                <label nz-radio-button nzValue="D"><div style="width: 25px;height: 25px;background-color: aqua;"></div><div style="width: 25px;height: 25px;background-color: red;"></div></label>
+              </nz-radio-group> -->
+
+
+              <!-- <nz-radio-group [(ngModel)]="radioValue" nzSize="large">
+                <label nz-radio-button nzValue="A"><p style="width: 25px;height: 25px;background-color: aqua;"></p><p style="width: 25px;height: 25px;background-color: red;"></p></label>
+                <label nz-radio-button nzValue="B">Shanghai</label>
+                <label nz-radio-button nzValue="C">Beijing</label>
+                <label nz-radio-button nzValue="D">Chengdu</label>
+              </nz-radio-group> -->
+
+            <!-- <nz-radio-group [(ngModel)]="radioValue">
+                <label nz-radio nzValue="A"> <div>  <div style="width: 25px;height: 25px;background-color: aqua;"></div><div style="width: 25px;height: 25px;background-color: red;"></div> </div></label>
+                <label nz-radio nzValue="B">Option B</label>
+                <label nz-radio nzValue="C">Option C</label>
+              </nz-radio-group> -->
+
+              <nz-radio-group [(ngModel)]="selectedTheme">
+                <label nz-radio nzValue="0"><div>Theme 1</div> <div style="width: 25px;height: 25px;background-color: #cdffeb;"></div><div style="width: 25px;height: 25px;background-color: #009f9d;"></div> <div style="width: 25px;height: 25px;background-color: #07456f;"></div></label>
+                <label nz-radio nzValue="1"><div>Theme 2</div> <div style="width: 25px;height: 25px;background-color: #45b7b8;"></div><div style="width: 25px;height: 25px;background-color: #706381"></div> <div style="width: 25px;height: 25px;background-color: #2c3848"></div> </label>
+                <label nz-radio nzValue="2"><div>Theme 3</div> <div style="width: 25px;height: 25px;background-color: #feceab"></div><div style="width: 25px;height: 25px;background-color: #ff847c"></div>  <div style="width: 25px;height: 25px;background-color: #eb4a5f"></div></label>
+              </nz-radio-group>
+              </div>
+            </div> 
+            <div *ngIf="current == 3">
+                <h2>{{title}}</h2>
+
+
+                <div id="mychart" style="margin: auto; width: 800px;height: 400px;"> </div>
+
+            </div>
+
+            <!-- <div id="mychart" style="width: 400px;height: 200px;"> </div> -->
+
+            
+    </div>
+  <div class="steps-action">
+    <button nz-button type="button" nzType="default" (click)="pre()" *ngIf="current > 0">
+      <span>Previous</span>
+    </button>
+    <button nz-button type="button" nzType="default" (click)="next()" *ngIf="current < 3">
+      <span>Next</span>
+    </button>
+    <button nz-button type="button" nzType="primary" (click)="done()" *ngIf="current === 3">
+      <span>Save</span>
+    </button>
+  </div>
