@@ -10,9 +10,18 @@
 
 ## Repo - https://github.com/deveshchatuphale7/Alekha
 
-Description - Alekha is paltform where your can discover meaningful insights from your data. It has 
-an awesome chart creater capable of handling structured as well as unstructured data along with option to 
-create multiple charts, which you can export to your presentations, add them to your websites using html tags & wordpress plugins
+Alekha is platform where your can discover meaningful insights from your data. It has 
+an awesome chart creator capable of handling structured as well as unstructured data along with option to 
+create multiple charts, which you can export to your presentations, add them to your websites using HTML tags & WordPress plugins. 
+
+Future Scope (Coming Soon)
+More charts !
+More connectors to connect live data
+Access from mobile app
+Library to integrate with any web based platform 
+Plugin for CMS based websites 
+Chart view & share access controls
+Multilingual Support
 
 # Screenshots
 
