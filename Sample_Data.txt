@@ -1,0 +1,32 @@
+Sample Data 
+
+Day,Count
+Mon,91
+Tue,73
+Wed,51
+Thu,85
+Fri,51
+Sat,88
+Sun,34
+
+Month,Population Vaccinated
+Jan,91
+Feb,73
+Mar,51
+Apr,85
+May,51
+Jun,88
+July,34
+
+States,Total Doses
+A & N Islands,370378
+Andhra Pradesh,31262911
+Arunachal Pradesh,989692
+Assam,18423312
+Bihar,39386468
+Chandigarh,1150607
+Chhattisgarh,14483599
+Dadra & Nagar Haveli,437334
+Daman & Diu,342898
+Delhi,14095805
+

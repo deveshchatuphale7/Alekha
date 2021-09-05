@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { CommonService } from 'src/app/common.service';
-
 // import * as XLSX from 'ts-xlsx';
  import * as XLSX from 'xlsx';
 
@@ -157,11 +156,7 @@ incomingfile(event)
            mesData.push(element.split(",")[measInd])
          });
 
-        // if(this.chartType == "line" || this.chartType == "bar"){
-
-        // }
-
-
+       
        let option = {
          title: {
            text: this.title,
@@ -196,7 +191,11 @@ incomingfile(event)
 option["color"] = colorpalet[Math.floor(this.selectedTheme)]
      option["xAxis"] = {
        type: 'category',
-       data:catData
+       data:catData,
+       axisLabel: {
+         interval: 0,
+         rotate: -25
+      },
    };
 
    option["yAxis"] = {
@@ -210,23 +209,23 @@ option["color"] = colorpalet[Math.floor(this.selectedTheme)]
  }]
       
  this.options = option;
-var option1:any = {
-  xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  },
-  yAxis: {
-      type: 'value'
-  },
-  series: [{
-      data: [150, 230, 224, 218, 135, 147, 260],
-      type: 'line'
-  },
-  {
-      data: [15, 23, 24, 218, 135, 147, 260],
-      type: 'line'
-  }]
-};
+// var option1:any = {
+//   xAxis: {
+//       type: 'category',
+//       data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+//   },
+//   yAxis: {
+//       type: 'value'
+//   },
+//   series: [{
+//       data: [150, 230, 224, 218, 135, 147, 260],
+//       type: 'line'
+//   },
+//   {
+//       data: [15, 23, 24, 218, 135, 147, 260],
+//       type: 'line'
+//   }]
+// };
       setTimeout(() => {
 
         let chart = echarts.init(document.getElementById("mychart"));

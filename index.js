@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 const rateLimit = require("express-rate-limit");
 const { Client } = require("cassandra-driver");
-const crypto = require('crypto');
+// const crypto = require('crypto');
 var uuid = require('uuid');
 const cors = require('cors');
 
@@ -21,7 +21,8 @@ const limiter = rateLimit({
   app.use(express.json());
 
 
-
+//  NOTE THAT AUTHENTICATION FUNCTIONALITY FOR DEMO PURPOSE ONLY
+// ENCRYPTION IS TO BE ADDED
   app.post("/login",async (req,res)=>{
     console.log(req.body);
       var email = "dcdevesh3@gmail.com";
@@ -33,7 +34,8 @@ const limiter = rateLimit({
     res.send({statusCode:200 ,"data":rs.rows })
   });
 
-
+//  NOTE THAT AUTHENTICATION FUNCTIONALITY FOR DEMO PURPOSE ONLY
+// ENCRYPTION IS TO BE ADDED
   app.post("/signup",async (req,res)=>{
     console.log(req.body);
       var email = "dcdevesh3@gmail.com";
@@ -71,10 +73,6 @@ const limiter = rateLimit({
 //     console.log(res);
 //   })
 
-
-// SELECT id, lastname, teams 
-// FROM cycling.cyclist_career_teams 
-// WHERE id=5b6962dd-3f90-4c93-8f61-eabfa4a803e2;
 
 
   async function run() {
@@ -119,8 +117,3 @@ client.connect();
       console.log("CODE INIT");
   });
 
-
-
-//   CREATE TABLE alekha.users ( id UUID PRIMARY KEY, email text, password text );
-// randomUUID()
-// cqlsh> INSERT INTO cycling.cyclist_name (id, lastname, firstname) VALUES (5b6962dd-3f90-4c93-8f61-eabfa4a803e2, 'VOS','Marianne');

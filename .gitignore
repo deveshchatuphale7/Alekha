@@ -45,5 +45,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-./config.json
-./secure-connect-dvshc7.zip
+.config.json
+.secure-connect-dvshc7.zip
+.GeneratedToken
