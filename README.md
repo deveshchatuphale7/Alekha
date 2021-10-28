@@ -1,3 +1,5 @@
+## Secured position in top 30 quality submissions with prize of USD 100
+
 ## Team name - Syntax_Error
 
 ## Project Name - Alekha
@@ -5,7 +7,7 @@
 ## Pitch - Disqs + Tableau for websites & applications
 
 
-## Video Link - https://youtu.be/IbJzZXlNP_w
+// ## Video Link - https://youtu.be/IbJzZXlNP_w
 
 
 ## Repo - https://github.com/deveshchatuphale7/Alekha
