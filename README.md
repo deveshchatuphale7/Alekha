@@ -7,8 +7,6 @@
 ## Pitch - Disqs + Tableau for websites & applications
 
 
-// ## Video Link - https://youtu.be/IbJzZXlNP_w
-
 
 ## Repo - https://github.com/deveshchatuphale7/Alekha
 
